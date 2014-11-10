@@ -1,11 +1,11 @@
-connect-nedb-session
-====================
+connect-nedb-session-two
+========================
+
+NeDB-backed session store for the Connect/Express session middleware.
 
 **This is forked from the no-longer-maintained branch by louischatriot**
 
-(I needed the database to clear its expired sesssions so it wouldn't grow infinitely big, so I've hacked it in.)
-
-NeDB-backed session store for the Connect/Express session middleware.
+(I needed the database to clear its expired sesssions so it wouldn't grow infinitely big, so I hacked it in.)
 
 ## Install and test
 ```javascript
