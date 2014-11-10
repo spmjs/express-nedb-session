@@ -35,8 +35,9 @@ server.use(session({ secret: 'yoursecret'
                              , httpOnly: true
                              , maxAge: 365 * 24 * 3600 * 1000   // One year for example
                              }
-                   , store: new NedbStore({ filename: 'path_to_nedb_persistence_file' })
+                   , store: new NedbStore({ filename: 'path_to_nedb_persistence_file', clearInterval: 24 * 3600 * 1000 })
                    }));
+// makes a session store that clears itself every 24 hours
 ```
 
 ## License

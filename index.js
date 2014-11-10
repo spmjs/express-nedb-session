@@ -35,14 +35,28 @@ module.exports = function (session) {
   /**
    * Constructor
    * @param {String} options.filename File where session data will be persisted
+   * @param {Number} options.clearInterval Elapsed time (in ms) between clears
    * @param {Function} cp Optional callback (useful when testing)
    */
   function NedbStore(options, cb) {
     var callback = cb || function () {};
+    var clearInterval = options.clearInterval;
 
     this.filename = options.filename;
     this.db = new Nedb(options.filename);
     this.db.loadDatabase(callback);
+
+    function clearExpiredSessions (db) {
+      db.find({"data.cookie._expires": {$lt: new Date()}}, function (err, sessions) {
+        console.log(sessions);
+        sessions.forEach(function (sess) {
+          db.remove({sid : sess.sid});
+        });
+      });
+      db.persistence.compactDatafile();
+    }
+    if (clearInterval) // defaults to never
+      setInterval(clearExpiredSessions, clearInterval, this.db);
   }
 
   // Inherit from Connect's session store
