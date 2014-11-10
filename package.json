@@ -1,14 +1,17 @@
 {
-  "name": "connect-nedb-session",
-  "version": "0.0.3",
+  "name": "connect-nedb-session-two",
+  "version": "1.0.0",
   "author": {
     "name": "tldr.io",
     "email": "hello@tldr.io"
   },
   "contributors": [
-    "Louis Chatriot"
+    {
+      "name": "Louis Chatriot",
+      "name": "Peter Fesz-Nguyen"
+    }
   ],
-  "description": "Nedb-backed session store for Connect/Express session middleware",
+  "description": "Nedb-backed session store for Connect/Express session middleware... now with a self-clearing store",
   "keywords": [
     "session",
     "store",
@@ -16,10 +19,10 @@
     "connect",
     "express"
   ],
-  "homepage": "https://github.com/louischatriot/connect-nedb-session",
+  "homepage": "https://github.com/cutejs/connect-nedb-session",
   "repository": {
     "type": "git",
-    "url": "git@github.com:louischatriot/connect-nedb-session.git"
+    "url": "http://github.com/cutejs/connect-nedb-session.git"
   },
   "dependencies": {
     "nedb": "0.11.1"
@@ -35,5 +38,16 @@
     "test": "mocha --timeout 2000 --reporter spec"
   },
   "main": "index",
-  "licence": "MIT"
+  "licence": "MIT",
+  "bugs": {
+    "url": "https://github.com/cutejs/connect-nedb-session/issues"
+  },
+  "maintainers": [
+    {
+      "name": "Peter Fesz-Nguyen",
+      "email": "pfesznguyen@gmail.com"
+    }
+  ],
+  "directories": {},
+  "readmeFilename": "README.md"
 }

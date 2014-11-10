@@ -1,7 +1,9 @@
 connect-nedb-session
 ====================
 
-**IMPORTANT: this library is not maintained anymore, please don't submit anymore pull requests except for bugfixes**
+**This is forked from the no-longer-maintained branch by louischatriot**
+
+(I needed the database to clear its expired sesssions so it wouldn't grow infinitely big, so I've hacked it in.)
 
 NeDB-backed session store for the Connect/Express session middleware.
 
